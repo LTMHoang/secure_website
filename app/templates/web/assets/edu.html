@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương trình đào tạo</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/tablet.css" media="screen and (max-width: 1000px)">   
+    <link rel="stylesheet" href="../assets/css/mobile.css" media="screen and (max-width: 500px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="./images/logo/Logo-DH-Mo-TPHCM-OU (1).webp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/edu.js"></script>
+</head>
+<body>
+    <div class="quickSp">
+        <div id="quickIcon">
+            <img src="./images/icon/facebook-messenger-icon-1.png" alt="mess">
+        </div>
+        <div id="quickMess">
+            <div id="quickClose"><i class="fa-solid fa-xmark"></i></div>
+            <h2>Hỗ trợ nhanh</h2>
+            <div id="quick_detail">
+                <p>Họ và tên</p>
+                <input type="text" placeholder="Họ và tên của bạn">
+                <p>Email</p>
+                <input type="text" placeholder="Địa chỉ email">
+                <p>Yêu cầu hỗ trợ</p>
+                <input type="text" placeholder="Yêu cầu của bạn là gì">
+            </div>
+            <input type="button" value="Gửi">
+        </div>
+    </div>
+
+    <a href="javascript:;"><div id="back-home"><img src="./images/logo/icon-256x256.png" alt="up"></div></a>
+    
+    <header class="header">
+        <div class="header_pc flex">
+            <div class="header-left">
+                <a href="../index.html"><img src="../assets/images/logo/Logo (1).png" alt="OU"></a>
+            </div>
+            <div class="header-right">
+                <h1>trung tâm tin học</h1>
+            </div>    
+        </div>
+
+        <div class="header_tablet flex">
+            <div class="header_tablet-logoname flex">
+                <a href="../index.html"><img src="../assets/images/logo/Logo (1).png" alt="OU"></a>
+                <h1>trung tâm <br/> tin học</h1>
+            </div>
+
+            <div class="header_tablet-navigation flex">
+                <label class="nav_bars-btn" for="nav_tablet-input"><i class="fa-solid fa-bars"></i></label>
+                <input hidden type="checkbox" name="" class="nav_input" id="nav_tablet-input">
+                <label for="nav_tablet-input" class="nav_overplay"></label>
+                <div class="nav_tablet">
+                    <label for="nav_tablet-input" class="nav_tablet-close"><i class="fa-solid fa-xmark"></i></label>
+                    <ul class="nav_tablet-list">
+                        <li><a class="nav_tablet-link" href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/calendar.html">Lịch khai giảng</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/edu.html">Chương trình đào tạo</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/services.html">Dịch vụ</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/news.html">Tin tức</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="header_tablet-search">
+                    <form action="">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_mobile flex">
+            <div class="header_mobile-logoname flex">
+                <a href="../index.html"><img src="../assets/images/logo/logo-white.png" alt="OU"></a>
+                <h1>trung tâm tin học</h1>
+            </div>
+
+            <div class="header_mobile-navigation flex">
+                <label class="nav_bars-btn" for="nav_mobile-input"><i class="fa-solid fa-bars"></i></label>
+                <input hidden type="checkbox" name="" class="nav_input" id="nav_mobile-input">
+                <label for="nav_mobile-input" class="nav_overplay"></label>
+                <div class="nav_mobile">
+                    <label for="nav_mobile-input" class="nav_mobile-close"><i class="fa-solid fa-xmark"></i></label>
+                    <ul class="nav_mobile-list">
+                        <li><a class="nav_mobile-link" href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/calendar.html">Lịch khai giảng</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/edu.html">Chương trình đào tạo</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/services.html">Dịch vụ</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/news.html">Tin tức</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="header_mobile-search">
+                    <form action="">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="flex menu">
+            <li><a href="../index.html" id="home"><i class="fa-solid fa-house"></i></a></li>
+            <li class="sub">
+                <a href="./calendar.html">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="menu subcontent">
+                    <li><a href="./calendar.html#thiet_ke_website">Thiết kế Website</a></li>
+                    <li><a href="./calendar.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                    <li><a href="./calendar.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                    <li><a href="./calendar.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                    <li><a href="./calendar.html#mang_may_tinh">Mạng máy tính</a></li>
+                </ul>
+            </li>
+            <li class="sub">
+                <a href="./edu.html">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="menu subcontent">
+                    <li><a href="./edu.html#thiet_ke_website">Thiết kế Website</a></li>
+                    <li><a href="./edu.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                    <li><a href="./edu.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                    <li><a href="./edu.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                    <li><a href="./edu.html#mang_may_tinh">Mạng máy tính</a></li>
+                </ul>
+            </li>
+            <li><a href="./services.html">Dịch vụ</a></li>
+            <li><a href="./news.html">Tin tức</a></li>
+            <li><a href="./paymentGuide.html">Hướng dẫn thanh toán</a></li>
+            <li><a href="./contact.html">Liên hệ</a></li>
+            <li id="nav_find" class="flex">
+                <form action="">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+   <section>
+        <section class="edu" id="thiet_ke_website">
+            <div>
+                <p class="head-title">Thiết kế Website</p>
+                <p class="course_introduce">
+                    Phương pháp dạy và học hoàn toàn mới: học công cụ thiết kế đồ họa thông qua sản phẩm thực tế trực quan, sinh động. Học viên được học lý thuyết song song với thực hành trực tuyến với giảng viên qua Zoom/Google Meet giúp tiếp thu bài nhanh và nắm vững công cụ ngay khi kết thúc buổi học. Ngoài ra, cơ hội ứng dụng kiến thức đã học vào công việc thực tế với hỗ trợ việc làm từ Trung Tâm.
+                    <br/><br/>
+                    Hãy trang bị những kiến thức <span class="name-subject">thiết kế website</span> bổ ích cho bản thân ngay hôm nay!
+                </p>
+                <div class="course_list flex">
+                    <div class="addBorder" rel="1">Chương trình dài hạn</div>
+                    <div rel="2">Chương trình ngắn hạn</div>
+                    <div rel="3">Chuyên viên Đồ họa & Web</div>
+                </div>
+                <div class="course_subjects">
+                    <div class="edu_active">
+                        <div id="chuong_trinh_dai_han" class="flex">
+                            <div rel="1">
+                                <a href="#ky_thuat_vien_thiet_ke_website">
+                                    <div>
+                                        <img src="./images/educationProgram/Web.png" alt="ky_thuat_vien">
+                                        <p>Kỹ thuật viên thiết kế Website</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="chuong_trinh_ngan_han" class="flex">
+                            <div rel="2">
+                                <a href="#Thiet_ke_web">
+                                    <div>
+                                        <img src="./images/educationProgram/design_web.png" alt="thiet_ke">
+                                        <p>Thiết kế Website</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="3">
+                                <a href="#Thiet_ke_giao_dien_website">
+                                    <div>
+                                        <img src="./images/educationProgram/design_display.jpg" alt="thiet_ke_giao_dien">
+                                        <p>Thiết kế giao diện Website</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="4">
+                                <a href="#app_mobile_design">
+                                    <div>
+                                        <img src="./images/educationProgram/app_mobile.jpg" alt="app">
+                                        <p>App Mobile Design</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="chuyen_vien_do_hoa_va_web" class="flex">
+                            <div rel="5">
+                                <a href="#chuyen_vien_thiet_ke_do_hoa_va_website">
+                                    <div>
+                                        <img src="./images/educationProgram/expert.jpg" alt="chuyen_vien">
+                                        <p>Chuyên viên thiết kế Đồ họa & Web</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course_infomation">
+                    <div id="ky_thuat_vien_thiet_ke_website">
+                        <p class="course_name">kỹ thuật viên thiết kế website</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/Web.png" alt="ky_thuat_vien">
+                            <p>
+                                <strong>Cấp độ:</strong> Khóa học dành cho người mới bắt đầu<br/>
+                                <strong>Môn học:</strong> Layout Web UI/UX, HTML5-CSS3-jQuery, Animation<br/>
+                                <strong>Thời lượng:</strong> 120 giờ (~ 5 tháng) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <p class="course_detail-new">NEW</p>
+                            <a href="./calendar.html#thiet_ke_website">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="Thiet_ke_web">
+                        <p class="course_name">thiết kế website</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/design_web.png" alt="thiet_ke">
+                            <p>
+                                <strong>Cấp độ:</strong> Khóa học dành cho người mới bắt đầu<br/>
+                                <strong>Môn học:</strong> HTML5, CSS3, jQuery, Reponsive + Animation<br/>
+                                <strong>Thời lượng:</strong> 66 giờ (~ 3 tháng) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#thiet_ke_website">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="Thiet_ke_giao_dien_website">
+                        <p class="course_name">thiết kế giao diện website</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/design_display.jpg" alt="thiet_ke_giao_dien">
+                            <p>
+                                <strong>Cấp độ:</strong> Khóa học dành cho người mới bắt đầu<br/>
+                                <strong>Môn học:</strong> Layout Web UI/UX<br/>
+                                <strong>Thời lượng:</strong> 33 giờ (~ 1,5 tháng) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#thiet_ke_website">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="app_mobile_design">
+                        <p class="course_name">app mobile design</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/app_mobile.jpg" alt="app">
+                            <p>
+                                <strong>Cấp độ:</strong> Khóa học dành cho người mới bắt đầu<br/>
+                                <strong>Môn học:</strong> Layout App UI/UX<br/>
+                                <strong>Thời lượng:</strong> 60 giờ (~ 3 tháng) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#thiet_ke_website">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="chuyen_vien_thiet_ke_do_hoa_va_website">
+                        <p class="course_name">chuyên viên thiết kế đồ họa & web</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/expert.jpg" alt="chuyen_vien">
+                            <p>
+                                <strong>Cấp độ:</strong> Khóa học dành cho người mới bắt đầu<br/>
+                                <strong>Môn học:</strong> Thiết kế đồ họa 2D + Thiết kế nâng cao + Thiết kế Website UX/UI<br/>
+                                <strong>Thời lượng:</strong> 360 giờ (~ 12 tháng) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <p class="course_detail-new">NEW</p>
+                            <a href="./calendar.html#thiet_ke_website">Lịch khai giảng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="addBorder" style="width: 90%; margin: 0 auto;"></div>
+
+        <section class="edu" id="lap_trinh_di_dong">
+            <div>
+                <p class="head-title">Lập trình di động</p>
+                <p class="course_introduce">
+                    Đến năm 2020, hơn 70% dân số thế giới sử dụng smartphone và doanh thu từ ứng dụng di động tăng 100% so với năm 2016!
+                    <br/>
+                    Những con số hết sức ấn tượng trên cho ta thấy ứng dụng di động thực sự là một lĩnh vực đầy triển vọng và đang trở nên gần gữi trong cuộc sống của mỗi người.
+                    <br/>
+                    Tham gia các <span class="name-subject">khóa học lập trình Android</span> tại Trung Tâm, bạn sẽ được tiếp cận với kiến thức sát thực tế, có tính ứng dụng cao và luôn cập nhật công nghệ mới.
+                    <br/><br/>
+                    Hãy trang bị những kiến thức <span class="name-subject">lập trình di động</span> bổ ích cho bản thân ngay hôm nay!
+                </p>
+                <div class="course_list flex">
+                    <div class="addBorder" rel="1">Các lớp lập trình viên di động</div>
+                    <div rel="2">Các chuyên đề khác</div>
+                </div>
+                <div class="course_subjects">
+                    <div class="edu_active">
+                        <div id="cac_lop_lap_trinh_vien_di_dong" class="flex">
+                            <div rel="1">
+                                <a href="#lap_trinh_android">
+                                    <div>
+                                        <img src="./images/educationProgram/code_android.jpg" alt="android">
+                                        <p>Lập trình Android</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                             <div rel="2">
+                                <a href="#lap_trinh_ios">
+                                    <div>
+                                        <img src="./images/educationProgram/code_ios.png" alt="ios">
+                                        <p>Lập trình iOS</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="cac_chuyen_de_khac" class="flex">
+                             <div rel="3">
+                                <a href="#react_navtive">
+                                    <div>
+                                        <img src="./images/educationProgram/react_navtive.jpg" alt="reactNative">
+                                        <p>React Native</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course_infomation">
+                    <div id="lap_trinh_android">
+                        <p class="course_name">lập trình android</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/code_android.jpg" alt="android">
+                            <p>
+                                <strong class="name-subject">lập trình android</strong><br/>
+                                <strong>Điều kiện: </strong>Học viên có kiến thức lập trình cơ bản hoặc đã tham gia khóa "Lập trình Java cơ bản" <br/>
+                                <strong>Thời lượng:</strong> 160 tiết(20 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#lap_trinh_di_dong">Lịch khai giảng</a>
+                        </div>
+
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/java.jpg" alt="java">
+                            <p>
+                                <strong class="name-subject">Lập trình Java cơ bản</strong><br/>
+                                Dành cho học sinh, sinh viên, người đã đi làm... yêu thích CNTT, đã có kiến thức cơ bản về Tin học văn phòng và sử dụng Internet<br/>
+                                <strong>Thời lượng:</strong> 40 tiết (5 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#lap_trinh_di_dong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="lap_trinh_ios">
+                        <p class="course_name">lập trình ios</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/code_ios.png" alt="ios">
+                            <p>
+                                Hiện tại khóa học chưa được mở
+                            </p>
+                            <a href="./calendar.html#lap_trinh_di_dong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="react_navtive">
+                        <p class="course_name">react navtive</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/react_navtive.jpg" alt="reactNavtive">
+                            <p>
+                                <strong>Điều kiện: </strong>Học viên đã biết lập trình cơ bản<br/>
+                                <strong>Thời lượng:</strong> 53 tiết (5 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <p class="course_detail-new">NEW</p>
+                            <a href="./calendar.html#lap_trinh_di_dong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="addBorder" style="width: 90%; margin: 0 auto;"></div>
+
+        <section class="edu" id="tin_hoc_van_phong">
+            <div>
+                <p class="head-title">Tin học văn phòng</p>
+                <p class="course_introduce">Trong thời đại ngày nay, <span class="name-subject">tin học văn phòng</span> đã đang và sẽ là một phần không thể thiếu để phục vụ con người trong học tập, công việc và cuộc sống. Các lớp <span>Tin Học Văn Phòng (cấp chứng chỉ Ứng dụng CNTT cơ bản - Ứng dụng CNTT nâng cao), Chứng chỉ THVP chuẩn Quốc tế MOS, các lớp chuyên đề ứng dụng như Powerbi, Excel, Data Analysis</span> tại Trung tâm được bảo chứng cao về sự uy tín và chất lượng.
+                    <br/><br/>
+                    Hãy trang bị những kiến thức <span class="name-subject">tin học văn phòng</span> bổ ích cho bản thân ngay hôm nay!
+                </p>
+                <div class="course_list flex">
+                    <div class="addBorder" rel="1">Tin học văn phòng</div>
+                    <div rel="2">Chuyên đề Excel</div>
+                </div>
+                <div class="course_subjects">
+                    <div class="edu_active">
+                        <div id="tin_hoc" class="flex">
+                            <div rel="1">
+                                <a href="#ung_dung_cntt_co_ban">
+                                    <div>
+                                        <img src="./images/educationProgram/Office1.png" alt="ung_dung_cntt_co_ban">
+                                        <p>Ứng dụng CNTT cơ bản</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="2">
+                                <a href="#ung_dung_cntt_nang_cao">
+                                    <div>
+                                        <img src="./images/educationProgram/cntt_hard.jpg" alt="ung_dung_cntt_nang_cao">
+                                        <p>Ứng dụng CNTT nâng cao</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="3">
+                                <a href="#luyen_thi_nhan_chung_chi">
+                                    <div>
+                                        <img src="./images/educationProgram/train.jpg" alt="luyen_thi_nhan_chung_chi">
+                                        <p>Luyện thi nhận chứng chỉ</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div id="chuyen_de" class="flex">
+                            <div rel="4">
+                                <a href="#chuyen_de_excel">
+                                    <div>
+                                        <img src="./images/educationProgram/excel.jpeg" alt="chuyen_de_excel">
+                                        <p>Chuyên đề Excel</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course_infomation">
+                    <div id="ung_dung_cntt_co_ban">
+                        <p class="course_name">ứng dụng cntt cơ bản</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/Office1.png" alt="ung_dung_cntt_co_ban">
+                            <p>
+                                <strong>Môn học: </strong>Máy tính & mạng máy tính, HĐH Windows, Word - Excel - Powerpoint cơ bản<br/>
+                                <strong>Thời lượng:</strong> 56 tiết
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="ung_dung_cntt_nang_cao">
+                        <p class="course_name">ứng dụng cntt nâng cao</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/cntt_hard.jpg" alt="ung_dung_cntt_nang_cao">
+                            <p>
+                                <strong>Môn học: </strong>Word - Excel - Powerpoint nâng cao<br/>
+                                <strong>Thời lượng:</strong> 56 tiết<br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <p class="course_detail-new">NEW</p>
+                            <a href="./calendar.html#tin_hoc_van_phong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="luyen_thi_nhan_chung_chi">
+                        <p class="course_name">luyện thi nhận chứng chỉ</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/train.jpg" alt="luyen_thi_nhan_chung_chi">
+                            <p>
+                                <strong>Điều kiện: </strong>Học viên đã có chứng chỉ A hoặc phải đạt trình độ tương đương chứng chỉ A
+                                <strong>Thời lượng:</strong> 18 tiết<br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="chuyen_de_excel">
+                        <p class="course_name">chuyên đề excel</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/excel.jpeg" alt="chuyen_de_excel">
+                            <p>
+                                <strong class="name-subject">Xử lý dữ liệu với bảng tính</strong>
+                                <strong>Thời lượng:</strong> 30 giờ<br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong">Lịch khai giảng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="addBorder" style="width: 90%; margin: 0 auto;"></div>
+
+        <section class="edu" id="tin_hoc_van_phong_mos">
+            <div>
+                <p class="head-title">Tin học văn phòng (MOS)</p>
+                <p class="course_introduce">
+                    Trong thời đại ngày nay, <span class="name-subject">tin học văn phòng</span> đã đang và sẽ là một phần không thể thiếu để phục vụ con người trong học tập, công việc và cuộc sống. Các lớp <span class="name-subject">tin học văn phòng chuẩn quốc tế mos</span> tại Trung Tâm được bảo chứng cao về sự uy tín và chất lượng.
+                    <br/><br/>
+                    Hãy trang bị những kiến thức <span class="name-subject">tin học văn phòng chuẩn quốc tế mos</span> bổ ích cho bản thân ngay hôm nay!
+                </p>
+                <div class="course_list flex">
+                    <div class="addBorder" rel="1"1>Tin học văn phòng chuẩn Quốc tế (MOS)</div>
+                </div>
+                <div class="course_subjects">
+                    <div  class="edu_active">
+                        <div id="tin_hoc_vp_mos" class="flex">
+                            <div rel="1">
+                                <a href="#word_mos">
+                                    <div>
+                                        <img src="./images/educationProgram/word.png" alt="word_mos">
+                                        <p>MOS - WORD</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="2">
+                                <a href="#excel_mos">
+                                    <div>
+                                        <img src="./images/educationProgram/excel.jpeg" alt="excel_mos">
+                                        <p>MOS - EXCEL</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="3">
+                                <a href="#powerpoint_mos">
+                                    <div>
+                                        <img src="./images/educationProgram/powerpoint.jpg" alt="powerpoint_mos">
+                                        <p>MOS - POWERPOINT</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course_infomation">
+                    <div id="word_mos">
+                        <p class="course_name">MOS WORD</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/word.png" alt="word_mos">
+                            <p>
+                                <strong>Điều kiện: </strong>Học viên phải có kiến thức tương đương chứng chỉ A hoặc Ứng dụng CNTT cơ bản<br/>
+                                <strong>Thời lượng:</strong> 44 tiết <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong_mos">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="excel_mos">
+                        <p class="course_name">MOS EXCEL</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/excel.jpeg" alt="excel_mos">
+                            <p>
+                                <strong>Điều kiện: </strong>Học viên phải có kiến thức tương đương chứng chỉ A hoặc Ứng dụng CNTT cơ bản<br/>
+                                <strong>Thời lượng:</strong> 44 tiết <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong_mos">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="powerpoint_mos">
+                        <p class="course_name">MOS POWERPOINT</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/powerpoint.jpg" alt="powerpoint_mos">
+                            <p>
+                                <strong>Điều kiện: </strong>Học viên phải có kiến thức tương đương chứng chỉ A hoặc Ứng dụng CNTT cơ bản<br/>
+                                <strong>Thời lượng:</strong> 44 tiết <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#tin_hoc_van_phong_mos">Lịch khai giảng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="addBorder" style="width: 90%; margin: 0 auto;"></div>
+
+        <section class="edu" id="mang_may_tinh">
+            <div>
+                <p class="head-title">Mạng máy tính</p>
+                <p class="course_introduce">
+                    Chương trình đào tạo được đúc kết từ những kinh nghiệm triển khai mạng thực tế tại các Cơ quan, Doanh nghiệp.
+                    <br/>
+                    Vững kiến thức, chắc kỹ năng, tự tin thi lấy các Chứng chỉ quốc tế MCSA, CCNA, ...
+                    <br/><br/>
+                    Hãy trang bị những kiến thức <span class="name-subject">mạng máy tính</span> bổ ích cho bản thân ngay hôm nay!
+                </p>
+                 <div class="course_list flex">
+                    <div class="addBorder" rel="1">Chuyên viên Quản trị và An ninh mạng</div>
+                </div>
+                <div class="course_subjects">
+                    <div  class="edu_active">
+                        <div id="mang_mt" class="flex">
+                            <div rel="1">
+                                <a href="#nhap_mon_quan_tri_mang_va_an_ninh_mang">
+                                    <div>
+                                        <img src="./images/educationProgram/Net.jpg" alt="nhap_mon">
+                                        <p>Nhập môn quản trị mạng và An ninh mạng</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="2">
+                                <a href="#quan_tri_ha_tang">
+                                    <div>
+                                        <img src="./images/educationProgram/NW2.webp" alt="quan_tri">
+                                        <p>Quản trị hạ tầng mạng</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="3">
+                                <a href="#quan_tri_he_thong_mang">
+                                    <div>
+                                        <img src="./images/educationProgram/NW1.png" alt="he_thong">
+                                        <p>Quản trị hệ thống mạng</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div rel="4">
+                                <a href="#an_ninh_mang">
+                                    <div>
+                                        <img src="./images/educationProgram/NW3.jpg" alt="an_ninh">
+                                        <p>An ninh mạng</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course_infomation">
+                    <div id="nhap_mon_quan_tri_mang_va_an_ninh_mang">
+                        <p class="course_name">Nhập môn quản trị mạng và An ninh mạng</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/Net.jpg" alt="nhap_mon">
+                            <p>
+                                <i>Lắp ráp, xử lý sự cố phần cứng PC, Laptop - Cài đặt máy tính - Mạng máy tính</i><br/>
+                                <strong>Thời lượng:</strong> 60 tiết (5 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#mang_may_tinh">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="quan_tri_ha_tang">
+                        <p class="course_name">Quản trị hạ tầng mạng</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/NW2.webp" alt="quan_tri">
+                            <p>
+                                <strong>Điều kiện: </strong>Có kiến thức về Nhập môn quản trị và an ninh mạng<br/>
+                                <strong>Thời lượng:</strong> 180 tiết (15 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#mang_may_tinh">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="quan_tri_he_thong_mang">
+                        <p class="course_name">Quản trị hệ thống mạng</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/NW1.png" alt="he_thong">
+                            <p>
+                                 <strong>Điều kiện: </strong>Có kiến thức về Nhập môn quản trị và an ninh mạng<br/>
+                                <strong>Thời lượng:</strong> 240 tiết (20 tuần) <br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <a href="./calendar.html#mang_may_tinh">Lịch khai giảng</a>
+                        </div>
+                    </div>
+
+                    <div id="an_ninh_mang">
+                        <p class="course_name">An ninh mạng</p>
+                        <div class="course_detail flex">
+                            <img src="./images/educationProgram/NW3.jpg" alt="an_ninh">
+                            <p>
+                                <strong>Điều kiện: </strong>Có kiến thức về Quản trị hệ thống và hạ tầng mạng
+                                <strong>Thời lượng:</strong> 80 tiết (8 tuần)<br/>
+                                <strong>Học phí:</strong> X.XXX.XXX VNĐ
+                            </p>
+                            <p class="course_detail-new">NEW</p>
+                            <a href="./calendar.html#mang_may_tinh">Lịch khai giảng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </section>
+
+    <footer>
+        <div class="footer_contact flex">
+            <div class="footer_contact-info">
+                    <img src="./images/logo/Logo (1).png" alt="OU">
+            </div>
+            <p>
+                Trường Đại học Mở thành phố Hồ Chí Minh đóng góp và nâng cao tri thức cho cộng đồng bằng các phương thức linh hoạt và thuận tiện nhất.
+            </p>
+        </div>
+        <div class="footer_address flex">
+            <div class="footer_address-content">
+                <h1>thông tin chung</h1>
+                <p>Địa chỉ: 35 – 37 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, TP. HCM.</p>
+                <p>Điện thoại: <span>028-38364748.</span></p>
+                <p>Fax: <span>028-39207639 hoặc 028-39207640.</span></p>
+                <p>E-mail: <a href="mailto: ou@ou.edu.vn">ou@ou.edu.vn.</a></p>
+                <div id="media">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <a href="" target="_blank"><i class="fa-brands fa-google"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/TruongDaiHocMo" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer_address-content">
+                <h1>các cơ sở trực thuộc</h1>
+                <div id="detail">
+                    <a href="https://ou.edu.vn/co-so-1/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 1:</div>
+                        <div>97 Võ Văn Tần, P. Võ Thị Sáu, Q. 3, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-2/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 2:</div>
+                        <div>35-37 Hồ Hảo Hớn, P. Cô Giang, Q. 1 , TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-3/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 3:</div>
+                        <div>371 Nguyễn Kiệm, P. 3, Q. Gò Vấp, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-4/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 4: </div>
+                        <div>02 Mai Thị Lựu, P. Đa Kao, Q. 1, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-5/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 5:</div>
+                        <div>68 Lê Thị Trung, P. Phú Lợi, TP. Thủ Dầu Một, Tỉnh Bình Dương.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-6/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 6:</div>
+                        <div>Đường số 9, P. Long Bình Tân, TP. Biên Hòa, Tỉnh Đồng Nai.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-7/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 7:</div>
+                        <div>Số 04 đường Tân Định, P. Ninh Hiệp, Thị Xã Ninh Hòa, Tỉnh Khánh Hòa.</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright">
+            <p>&copy; 2022 đại học mở - minh hoàng & kiến nghĩa</p>
+        </div>
+    </footer>
+</body>
+</html>

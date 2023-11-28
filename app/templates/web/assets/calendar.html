@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch khai giảng</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/tablet.css" media="screen and (max-width: 1000px)">   
+    <link rel="stylesheet" href="../assets/css/mobile.css" media="screen and (max-width: 500px)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="./images/logo/Logo-DH-Mo-TPHCM-OU (1).webp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/calendar.js"></script>
+</head>
+<body>
+    <div class="quickSp">
+        <div id="quickIcon">
+            <img src="./images/icon/facebook-messenger-icon-1.png" alt="mess">
+        </div>
+        <div id="quickMess">
+            <div id="quickClose"><i class="fa-solid fa-xmark"></i></div>
+            <h2>Hỗ trợ nhanh</h2>
+            <div id="quick_detail">
+                <p>Họ và tên</p>
+                <input type="text" placeholder="Họ và tên của bạn">
+                <p>Email</p>
+                <input type="text" placeholder="Địa chỉ email">
+                <p>Yêu cầu hỗ trợ</p>
+                <input type="text" placeholder="Yêu cầu của bạn là gì">
+            </div>
+            <input type="button" value="Gửi">
+        </div>
+    </div>
+
+    <a href="javascript:;"><div id="back-home"><img src="./images/logo/icon-256x256.png" alt="up"></div></a>
+    
+    <header class="header">
+        <div class="header_pc flex">
+            <div class="header-left">
+                <a href="../index.html"><img src="../assets/images/logo/Logo (1).png" alt="OU"></a>
+            </div>
+            <div class="header-right">
+                <h1>trung tâm tin học</h1>
+            </div>    
+        </div>
+
+        <div class="header_tablet flex">
+            <div class="header_tablet-logoname flex">
+                <a href="../index.html"><img src="../assets/images/logo/Logo (1).png" alt="OU"></a>
+                <h1>trung tâm <br/> tin học</h1>
+            </div>
+
+            <div class="header_tablet-navigation flex">
+                <label class="nav_bars-btn" for="nav_tablet-input"><i class="fa-solid fa-bars"></i></label>
+                <input hidden type="checkbox" name="" class="nav_input" id="nav_tablet-input">
+                <label for="nav_tablet-input" class="nav_overplay"></label>
+                <div class="nav_tablet">
+                    <label for="nav_tablet-input" class="nav_tablet-close"><i class="fa-solid fa-xmark"></i></label>
+                    <ul class="nav_tablet-list">
+                        <li><a class="nav_tablet-link" href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/calendar.html">Lịch khai giảng</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/edu.html">Chương trình đào tạo</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/services.html">Dịch vụ</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/news.html">Tin tức</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                        <li><a class="nav_tablet-link" href="../assets/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="header_tablet-search">
+                    <form action="">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_mobile flex">
+            <div class="header_mobile-logoname flex">
+                <a href="../index.html"><img src="../assets/images/logo/logo-white.png" alt="OU"></a>
+                <h1>trung tâm tin học</h1>
+            </div>
+
+            <div class="header_mobile-navigation flex">
+                <label class="nav_bars-btn" for="nav_mobile-input"><i class="fa-solid fa-bars"></i></label>
+                <input hidden type="checkbox" name="" class="nav_input" id="nav_mobile-input">
+                <label for="nav_mobile-input" class="nav_overplay"></label>
+                <div class="nav_mobile">
+                    <label for="nav_mobile-input" class="nav_mobile-close"><i class="fa-solid fa-xmark"></i></label>
+                    <ul class="nav_mobile-list">
+                        <li><a class="nav_mobile-link" href="../index.html"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/calendar.html">Lịch khai giảng</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/edu.html">Chương trình đào tạo</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/services.html">Dịch vụ</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/news.html">Tin tức</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                        <li><a class="nav_mobile-link" href="../assets/contact.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="header_mobile-search">
+                    <form action="">
+                        <input type="text" placeholder="Tìm kiếm">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="flex menu">
+            <li><a href="../index.html" id="home"><i class="fa-solid fa-house"></i></a></li>
+            <li class="sub">
+                <a href="./calendar.html">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="menu subcontent">
+                    <li><a href="./calendar.html#thiet_ke_website">Thiết kế Website</a></li>
+                    <li><a href="./calendar.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                    <li><a href="./calendar.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                    <li><a href="./calendar.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                    <li><a href="./calendar.html#mang_may_tinh">Mạng máy tính</a></li>
+                </ul>
+            </li>
+            <li class="sub">
+                <a href="./edu.html">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="menu subcontent">
+                    <li><a href="./edu.html#thiet_ke_website">Thiết kế Website</a></li>
+                    <li><a href="./edu.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                    <li><a href="./edu.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                    <li><a href="./edu.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                    <li><a href="./edu.html#mang_may_tinh">Mạng máy tính</a></li>
+                </ul>
+            </li>
+            <li><a href="./services.html">Dịch vụ</a></li>
+            <li><a href="./news.html">Tin tức</a></li>
+            <li><a href="./paymentGuide.html">Hướng dẫn thanh toán</a></li>
+            <li><a href="./contact.html">Liên hệ</a></li>
+            <li id="nav_find" class="flex">
+                <form action="">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="pc">
+        <section class="cal" id="thiet_ke_web">
+            <p class="head-title">Thiết kế Website</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                            (2) TKW: Thiết kế Website<br/>
+                            (3) TKGDW: Thiết kế giao diện Website<br/>
+                            (4) AMD: App Mobile Design<br/>
+                            (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        </i>
+                    </p>
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Lớp</th>
+                                <th>Thời gian</th>
+                                <th>Lịch khai giảng</th>
+                                <th>Địa điểm học</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>KTVTKW</td>
+                                <td>7h - 11h</td>
+                                <td>24/8/2022</td>
+                                <td>P.001_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td>KTVTKW</td>
+                                <td>13h - 17h</td>
+                                <td>24/8/2022</td>
+                                <td>P.101_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TKW</td>
+                                <td>13h - 17h</td>
+                                <td>25/8/2022</td>
+                                <td>P.202_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TKGDW</td>
+                                <td>7h - 11h</td>
+                                <td>24/8/2022</td>
+                                <td>P.301_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>AMD</td>
+                                <td>Hiện tại chưa có </td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CVTKDHVW</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="lap_trinh_di_dong">
+            <p class="head-title">Lập trình di động</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) LTA: Lập trình Android <br/>
+                            (2) LTI: Lập trình IOS <br/>
+                            (3) RN: React Native
+                        </i>
+                    </p>
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Lớp</th>
+                                <th>Thời gian</th>
+                                <th>Lịch khai giảng</th>
+                                <th>Địa điểm học</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LTA</td>
+                                <td>7h - 11h</td>
+                                <td>29/8/2022</td>
+                                <td>PM.002_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td>LTA</td>
+                                <td>13h - 17h</td>
+                                <td>25/8/2022</td>
+                                <td>PM.007_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LTI</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept" disabled>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td>LTI</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept" disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RN</td>
+                                <td>13h - 17h</td>
+                                <td>6/9/2022</td>
+                                <td>P.401_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="tin_hoc_van_phong">
+            <p class="head-title">Tin học văn phòng</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) UDCNTTCB: Ứng dụng CNTT cơ bản <br/>
+                            (2) UDCNTTNC: Ứng dụng CNTT nâng cao <br/>
+                            (3) LTNCC: Luyện thi nhận chứng chỉ
+                        </i>
+                    </p>
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Lớp</th>
+                                <th>Thời gian</th>
+                                <th>Lịch khai giảng</th>
+                                <th>Địa điểm học</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UDCNTTCB</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>UDCNTTNC</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LTNCC</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="tin_hoc_van_phong_mos">
+            <p class="head-title">Tin học văn phòng (MOS)</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) MOS_W: MOS WORD<br/>
+                            (2) MOS_E: MOS EXCEL<br/>
+                            (3) MOS_P: MOS POWERPOINT
+                        </i>
+                    </p>
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Lớp</th>
+                                <th>Thời gian</th>
+                                <th>Lịch khai giảng</th>
+                                <th>Địa điểm học</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MOS_W</td>
+                                <td>7h - 11h</td>
+                                <td>24/8/2022</td>
+                                <td>P.301_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td>MOS_E</td>
+                                <td>13h - 17h</td>
+                                <td>24/8/2022</td>
+                                <td>P.301_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>MOS_P</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="mang_may_tinh">
+            <p class="head-title">Mạng máy tính</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) NMQTMVANM: Nhập môn quản trị mạng và An ninh mạng<br/>
+                            (2) QTHTM: Quản trị hạ tầng mạng<br/>
+                            (3) QTHTM: Quản trị hệ thống mạng<br/>
+                            (4) ANM: An ninh mạng
+                        </i>
+                    </p>
+                    <table cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Lớp</th>
+                                <th>Thời gian</th>
+                                <th>Lịch khai giảng</th>
+                                <th>Địa điểm học</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NMQTMVANM</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>QTHTM</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>QTHTM</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>Hiện tại chưa có</td>
+                                <td>P._371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ANM</td>
+                                <td>7h - 11h</td>
+                                <td>10/9/2022</td>
+                                <td>P.202_371 Nguyễn Kiệm</td>
+                                <td>
+                                    <input type="button" value="Đăng ký"  class="calendar_accept">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="mobile">
+        <section class="cal" id="thiet_ke_web">
+            <p class="head-title">Thiết kế Website</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                            (2) TKW: Thiết kế Website<br/>
+                            (3) TKGDW: Thiết kế giao diện Website<br/>
+                            (4) AMD: App Mobile Design<br/>
+                            (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        </i>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.001_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.101_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>25/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.202_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKGDW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.301_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>AMD</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>CVTKDHVW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="lap_trinh_di_dong">
+            <p class="head-title">Lập trình di động</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                            (2) TKW: Thiết kế Website<br/>
+                            (3) TKGDW: Thiết kế giao diện Website<br/>
+                            (4) AMD: App Mobile Design<br/>
+                            (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        </i>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.001_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.101_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>25/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.202_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKGDW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.301_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>AMD</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>CVTKDHVW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="tin_hoc_van_phong">
+            <p class="head-title">Tin học văn phòng</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                            (2) TKW: Thiết kế Website<br/>
+                            (3) TKGDW: Thiết kế giao diện Website<br/>
+                            (4) AMD: App Mobile Design<br/>
+                            (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        </i>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.001_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.101_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>25/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.202_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKGDW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.301_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>AMD</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>CVTKDHVW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="tin_hoc_van_phong_mos">
+            <p class="head-title">Tin học văn phòng (MOS)</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
+                            (2) TKW: Thiết kế Website<br/>
+                            (3) TKGDW: Thiết kế giao diện Website<br/>
+                            (4) AMD: App Mobile Design<br/>
+                            (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        </i>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.001_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.101_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>25/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.202_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKGDW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.301_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>AMD</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>CVTKDHVW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cal" id="mang_may_tinh">
+            <p class="head-title">Mạng máy tính</p>
+            <div class="cal_infomation">
+                <div>
+                    <p>
+                        <i>
+                            (1) NMQTMVANM: Nhập môn quản trị mạng và An ninh mạng<br/>
+                            (2) QTHTM: Quản trị hạ tầng mạng<br/>
+                            (3) QTHTM: Quản trị hệ thống mạng<br/>
+                            (4) ANM: An ninh mạng
+                        </i>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.001_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>KTVTKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.101_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>13h - 17h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>25/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.202_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>TKGDW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>7h - 11h</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>24/8/2022</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P.301_371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>AMD</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+
+                    <table>
+                        <tr>
+                            <td>Lớp</td>
+                            <td>CVTKDHVW</td>
+                        </tr>
+                        <tr>
+                            <td>Thời gian</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Lịch khai giảng</td>
+                            <td>Hiện tại chưa có</td>
+                        </tr>
+                        <tr>
+                            <td>Địa điểm học</td>
+                            <td>P._371 Nguyễn Kiệm</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section>
+        <div>
+            <div class="cal_overplay"></div>
+            <div class="form_signup">
+                <p class="cal_close"><i class="fa-solid fa-circle-xmark"></i></p>
+                <p class="cal_detail">
+                    <label for="name">Họ và tên</label>
+                    <br/>
+                    <input type="text" placeholder="Họ và tên" id="name">
+                    <br/>
+                    <label for="dob">Ngày sinh</label>
+                    <br/>
+                    <input type="date" placeholder="Ngày sinh" id="dob">
+                    <br/>
+                    <label for="email">Địa chỉ Email</label>
+                    <br/>
+                    <input type="text" placeholder="Địa chỉ Email" id="email">
+                    <br/>
+                    <label for="phone_number">Số điện thoại</label>
+                    <br/>
+                    <input type="text" placeholder="Số điện thoại" id="phone_number">
+                    <br/>
+                    <label for="address">Địa chỉ hiện tại</label>
+                    <br/>
+                    <input type="text" placeholder="Địa chỉ hiện tại" id="address">
+                </p>
+                <input type="button" value="Đăng ký">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_contact flex">
+            <div class="footer_contact-info">
+                    <img src="./images/logo/Logo (1).png" alt="OU">
+            </div>
+            <p>
+                Trường Đại học Mở thành phố Hồ Chí Minh đóng góp và nâng cao tri thức cho cộng đồng bằng các phương thức linh hoạt và thuận tiện nhất.
+            </p>
+        </div>
+        <div class="footer_address flex">
+            <div class="footer_address-content">
+                <h1>thông tin chung</h1>
+                <p>Địa chỉ: 35 – 37 Hồ Hảo Hớn, Phường Cô Giang, Quận 1, TP. HCM.</p>
+                <p>Điện thoại: <span>028-38364748.</span></p>
+                <p>Fax: <span>028-39207639 hoặc 028-39207640.</span></p>
+                <p>E-mail: <a href="mailto: ou@ou.edu.vn">ou@ou.edu.vn.</a></p>
+                <div id="media">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <a href="" target="_blank"><i class="fa-brands fa-google"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/TruongDaiHocMo" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer_address-content">
+                <h1>các cơ sở trực thuộc</h1>
+                <div id="detail">
+                    <a href="https://ou.edu.vn/co-so-1/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 1:</div>
+                        <div>97 Võ Văn Tần, P. Võ Thị Sáu, Q. 3, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-2/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 2:</div>
+                        <div>35-37 Hồ Hảo Hớn, P. Cô Giang, Q. 1 , TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-3/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 3:</div>
+                        <div>371 Nguyễn Kiệm, P. 3, Q. Gò Vấp, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-4/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 4: </div>
+                        <div>02 Mai Thị Lựu, P. Đa Kao, Q. 1, TP. Hồ Chí Minh.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-5/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 5:</div>
+                        <div>68 Lê Thị Trung, P. Phú Lợi, TP. Thủ Dầu Một, Tỉnh Bình Dương.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-6/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 6:</div>
+                        <div>Đường số 9, P. Long Bình Tân, TP. Biên Hòa, Tỉnh Đồng Nai.</div>
+                    </a>
+                    <br/>
+                    <a href="https://ou.edu.vn/co-so-7/" target="_blank" class="flex">
+                        <div><i class="fa-solid fa-location-dot"></i> Địa điểm 7:</div>
+                        <div>Số 04 đường Tân Định, P. Ninh Hiệp, Thị Xã Ninh Hòa, Tỉnh Khánh Hòa.</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright">
+            <p>&copy; 2022 đại học mở - minh hoàng & kiến nghĩa</p>
+        </div>
+    </footer>
+</body>
+</html>
