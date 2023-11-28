@@ -1,27 +1,133 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Trang chủ</a>
-                </li>
-                {% for c in categories %}
-                <li class="nav-item">
-                    <a class="nav-link" href="?cate_id={{c.id}}">{{ c.name }}</a>
-                </li>
-                {% endfor %}
-                <li class="nav-item">
-                    <a class="nav-link text-danger" href="/cart">&#128722; Giỏ hàng <span class="badge bg-danger cart-counter">{{ cart.total_quantity }}</span></a>
-                </li>
-            </ul>
-            <form class="d-flex" method="get" action="/">
-                <input class="form-control me-2" type="text" name="kw" placeholder="Nhập từ khóa ...">
-                <button class="btn btn-primary" type="submit">Tìm</button>
-            </form>
+<div class="quickSp">
+    <div id="quickIcon">
+        <img src=".app/templates/assets/images/icon/facebook-messenger-icon-1.png" alt="mess">
+    </div>
+    <div id="quickMess">
+        <div id="quickClose"><i class="fa-solid fa-xmark"></i></div>
+        <h2>Hỗ trợ nhanh</h2>
+        <div id="quick_detail">
+            <p>Họ và tên</p>
+            <input type="text" placeholder="Họ và tên của bạn">
+            <p>Email</p>
+            <input type="text" placeholder="Địa chỉ email">
+            <p>Yêu cầu hỗ trợ</p>
+            <input type="text" placeholder="Yêu cầu của bạn là gì">
+        </div>
+        <input type="button" value="Gửi">
+    </div>
+</div>
+
+<a href="javascript:;">
+    <div id="back-home"><img src=".app/templates/assets/images/logo/icon-256x256.png" alt="up"></div>
+</a>
+
+<header class="header">
+    <div class="header_pc flex">
+        <div class="header-left">
+            <a href=".app/templates/index.html"><img src=".app/templates/assets/images/logo/Logo (1).png" alt="OU"></a>
+        </div>
+        <div class="header-right">
+            <h1>trung tâm tin học</h1>
         </div>
     </div>
+
+    <div class="header_tablet flex">
+        <div class="header_tablet-logoname flex">
+            <a href=".app/templates/index.html"><img src=".app/templates/assets/images/logo/Logo (1).png" alt="OU"></a>
+            <h1>trung tâm <br/> tin học</h1>
+        </div>
+
+        <div class="header_tablet-navigation flex">
+            <label class="nav_bars-btn" for="nav_tablet-input"><i class="fa-solid fa-bars"></i></label>
+            <input hidden type="checkbox" name="" class="nav_input" id="nav_tablet-input">
+            <label for="nav_tablet-input" class="nav_overplay"></label>
+            <div class="nav_tablet">
+                <label for="nav_tablet-input" class="nav_tablet-close"><i class="fa-solid fa-xmark"></i></label>
+                <ul class="nav_tablet-list">
+                    <li><a class="nav_tablet-link" href=".app/templates/index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    </li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/calendar.html">Lịch khai giảng</a></li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/edu.html">Chương trình đào tạo</a></li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/services.html">Dịch vụ</a></li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/news.html">Tin tức</a></li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                    <li><a class="nav_tablet-link" href=".app/templates/assets/contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="header_tablet-search">
+                <form action="">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="header_mobile flex">
+        <div class="header_mobile-logoname flex">
+            <a href=".app/templates/index.html"><img src=".app/templates/assets/images/logo/logo-white.png" alt="OU"></a>
+            <h1>trung tâm tin học</h1>
+        </div>
+
+        <div class="header_mobile-navigation flex">
+            <label class="nav_bars-btn" for="nav_mobile-input"><i class="fa-solid fa-bars"></i></label>
+            <input hidden type="checkbox" name="" class="nav_input" id="nav_mobile-input">
+            <label for="nav_mobile-input" class="nav_overplay"></label>
+            <div class="nav_mobile">
+                <label for="nav_mobile-input" class="nav_mobile-close"><i class="fa-solid fa-xmark"></i></label>
+                <ul class="nav_mobile-list">
+                    <li><a class="nav_mobile-link" href=".app/templates/index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                    </li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/calendar.html">Lịch khai giảng</a></li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/edu.html">Chương trình đào tạo</a></li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/services.html">Dịch vụ</a></li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/news.html">Tin tức</a></li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+                    <li><a class="nav_mobile-link" href=".app/templates/assets/contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="header_mobile-search">
+                <form action="">
+                    <input type="text" placeholder="Tìm kiếm">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <ul class="flex menu">
+        <li><a href=".app/templates/index.html" id="home"><i class="fa-solid fa-house"></i></a></li>
+        <li class="sub">
+            <a href=".app/templates/assets/calendar.html">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="menu subcontent">
+                <li><a href=".app/templates/assets/calendar.html#thiet_ke_website">Thiết kế Website</a></li>
+                <li><a href=".app/templates/assets/calendar.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                <li><a href=".app/templates/assets/calendar.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                <li><a href=".app/templates/assets/calendar.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                <li><a href=".app/templates/assets/calendar.html#mang_may_tinh">Mạng máy tính</a></li>
+            </ul>
+        </li>
+        <li class="sub">
+            <a href=".app/templates/assets/edu.html">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="menu subcontent">
+                <li><a href=".app/templates/assets/edu.html#thiet_ke_website">Thiết kế Website</a></li>
+                <li><a href=".app/templates/assets/edu.html#lap_trinh_di_dong">Lập trình di động</a></li>
+                <li><a href=".app/templates/assets/edu.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
+                <li><a href=".app/templates/assets/edu.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
+                <li><a href=".app/templates/assets/edu.html#mang_may_tinh">Mạng máy tính</a></li>
+            </ul>
+        </li>
+        <li><a href=".app/templates/assets/services.html">Dịch vụ</a></li>
+        <li><a href=".app/templates/assets/news.html">Tin tức</a></li>
+        <li><a href=".app/templates/assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
+        <li><a href=".app/templates/assets/contact.html">Liên hệ</a></li>
+        <li id="nav_find" class="flex">
+            <form action="">
+                <input type="text" placeholder="Tìm kiếm">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </li>
+    </ul>
 </nav>
