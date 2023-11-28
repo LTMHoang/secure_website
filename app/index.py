@@ -19,49 +19,6 @@ def admin_login():
     request.form.get('password')
 
 
-# @app.route('/api/cart', methods=['post'])
-# def add_to_cart():
-#     """
-#     {
-#         "cart": {
-#             "1": {
-#                 "id": "1",
-#                 "name": "ABC",
-#                 "price": 12,
-#                 "quantity": 1
-#             }
-#         }
-#     }
-#     :return:
-#     """
-#
-#     data = request.json
-#
-#     cart = session.get('cart')
-#     if cart is None:
-#         cart = {}
-#
-#     id = str(data.get("id"))
-#     if id in cart:
-#         cart[id]['quantity'] += 1
-#     else:
-#         cart[id] = {
-#             "id": id,
-#             "name": data.get('name'),
-#             "price": data.get('price'),
-#             "quantity": 1
-#         }
-#
-#     session['cart'] = cart
-#
-#     return jsonify(utils.count_cart(cart))
-
-
-# @app.route('/cart')
-# def cart():
-#     return render_template('cart.html')
-
-
 @login.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
@@ -80,14 +37,6 @@ def login_admin():
     return redirect("/admin")
 
 
-# @app.context_processor
-# def common_response():
-#     return {
-#         'categories': dao.load_categories(),
-#         'cart': utils.count_cart(session.get('cart'))
-#     }
-
-
 if __name__ == '__main__':
-    # from app import admin
+    from app import admin
     app.run(debug=True)

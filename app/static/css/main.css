@@ -1,6 +1,6 @@
 :root {
     --backColor: #1d559f;
-    --backColor2: #3399ff;
+    --backColor2: #000000;
     --sizeAll: 20px;
 }
 
@@ -12,7 +12,7 @@
 
 html {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(218, 230, 230, 0.6);
+    background-color: #000000;
 }
 
 .flex {
