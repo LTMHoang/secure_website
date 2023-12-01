@@ -13,6 +13,41 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/calendar')
+def calendar():
+    return render_template('/pages/calendar.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('/pages/contact.html')
+
+
+@app.route('/edu')
+def edu():
+    return render_template('/pages/edu.html')
+
+
+@app.route('/news')
+def news():
+    return render_template('/pages/news.html')
+
+
+@app.route('/paymentGuide')
+def payment_guide():
+    return render_template('/pages/paymentGuide.html')
+
+
+@app.route('/services')
+def services():
+    return render_template('/pages/services.html')
+
+
+@app.route('/calendar.html')
+def pages():
+    return render_template('/pages/calendar.html')
+
+
 @app.route('/admin/login', methods=['post'])
 def admin_login():
     request.form.get('username')

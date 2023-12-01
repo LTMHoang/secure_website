@@ -1,0 +1,49 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<section>
+    <div class="main-contact">
+        <p class="head-title">Thông tin liên hệ</p>
+        <p>
+            Chào các bạn, cảm ơn các bạn đã quan tâm các khóa học tại <span class="capi-bold">trung tâm tin học</span>
+            Trường Đại học Mở Tp. Hồ Chí Minh.
+            <br/><br/>
+            Xin vui lòng liên hệ với chúng tôi để được tư vấn và ghi danh vào các khóa học.
+        </p>
+        <div class="map-form-contact flex">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.654891256438!2d106.69032551458892!3d10.761058192331943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f113e363773%3A0xe83ac2165f2df5c!2zMzUtMzcgSOG7kyBI4bqjbyBI4bubbiwgUGjGsOG7nW5nIEPDtCBHaWFuZywgUXXhuq1uIDEsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1658635190547!5m2!1svi!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="form">
+                <h2>trường đại học mở thành phố hồ chí minh</h2>
+                <p><strong>ĐỊA CHỈ :</strong> 35 – 37 HỒ HẢO HỚN, PHƯỜNG CÔ GIANG, QUẬN 1, TP. HCM</p>
+                <p><strong>ĐIỆN THOẠI:</strong> 028-38364748.</p>
+                <p><strong>FAX:</strong> 028-39207639 HOẶC 028-39207640</p>
+                <h2>Liên hệ với chúng tôi:</h2>
+                <form action="">
+                    <div class="fill">
+                        <label for="name">Họ và tên</label>
+                        <br/>
+                        <input type="text">
+                        <br/>
+                        <label for="email">Email của bạn</label>
+                        <br/>
+                        <input type="text">
+                        <br/>
+                        <label for="content">Nội dung</label>
+                        <br/>
+                        <textarea name="content" id="content" cols="40" rows="10" aria-required="true"
+                                  aria-invalid="false"></textarea>
+                    </div>
+                    <div class="submit-reset">
+                        <input type="submit" value="GỬI NGAY">
+                        <input type="reset" value="NHẬP LẠI">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

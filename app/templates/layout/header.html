@@ -98,31 +98,13 @@
 
 <nav>
     <ul class="flex menu">
-        <li><a href="/" id="home"><i class="fa-solid fa-house"></i></a></li>
-        <li class="sub">
-            <a href="./assets/calendar.html">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a>
-            <ul class="menu subcontent">
-                <li><a href="./assets/calendar.html#thiet_ke_website">Thiết kế Website</a></li>
-                <li><a href="./assets/calendar.html#lap_trinh_di_dong">Lập trình di động</a></li>
-                <li><a href="./assets/calendar.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
-                <li><a href="./assets/calendar.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
-                <li><a href="./assets/calendar.html#mang_may_tinh">Mạng máy tính</a></li>
-            </ul>
-        </li>
-        <li class="sub">
-            <a href="./assets/edu.html">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a>
-            <ul class="menu subcontent">
-                <li><a href="./assets/edu.html#thiet_ke_website">Thiết kế Website</a></li>
-                <li><a href="./assets/edu.html#lap_trinh_di_dong">Lập trình di động</a></li>
-                <li><a href="./assets/edu.html#tin_hoc_van_phong">Tin học văn phòng</a></li>
-                <li><a href="./assets/edu.html#tin_hoc_van_phong_mos">Tin học văn phòng (MOS)</a></li>
-                <li><a href="./assets/edu.html#mang_may_tinh">Mạng máy tính</a></li>
-            </ul>
-        </li>
-        <li><a href="./assets/services.html">Dịch vụ</a></li>
-        <li><a href="./assets/news.html">Tin tức</a></li>
-        <li><a href="./assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
-        <li><a href="./assets/contact.html">Liên hệ</a></li>
+        <li><a href="{{ url_for('index') }}" id="home"><i class="fa-solid fa-house"></i></a></li>
+        <li class="sub"><a href="{{ url_for('calendar') }}">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a></li>
+        <li class="sub"><a href=".{{ url_for('edu') }}">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a></li>
+        <li><a href="{{ url_for('services') }}">Dịch vụ</a></li>
+        <li><a href="{{ url_for('news') }}">Tin tức</a></li>
+        <li><a href="{{ url_for('payment_guide') }}">Hướng dẫn thanh toán</a></li>
+        <li><a href="{{ url_for('contact') }}">Liên hệ</a></li>
         <li id="nav_find" class="flex">
             <form action="">
                 <input type="text" placeholder="Tìm kiếm">
