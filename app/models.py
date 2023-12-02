@@ -143,7 +143,100 @@ class QuanLyHocPhi(db.Model):
     def __str__(self):
         return self.id
 
+class SinhVien(db.Model):
+    __tablename__ = 'sinh_vien'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    ho_ten = Column(String(255), nullable=False)
+    ngay_sinh = Column(Date, nullable=False)
+    dia_chi = Column(String(255))
+    email = Column(String(255), unique=True)
+    dang_kys = relationship('DangKy', back_populates='sinh_vien')
+    diems = relationship('Diem', back_populates='sinh_vien')
+    
+    def __str__(self):
+        return self.name
 
+class KhoaHoc(db.Model):
+    __tablename__ = 'khoa_hoc'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    ten_khoa_hoc = Column(String(255), nullable=False)
+    mo_ta = Column(String(1000))
+    dang_kys = relationship('DangKy', back_populates='khoa_hoc')
+    lop_hocs = relationship('LopHoc', back_populates='khoa_hoc')
+    
+    def __str__(self):
+        return self.name
+
+class DangKy(db.model):
+    __tablename__ = 'dang_ky'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
+    khoa_hoc_id = Column(Integer, ForeignKey('khoa_hoc.id'))
+    ngay_dang_ky = Column(Date, server_default='CURRENT_DATE')
+    sinh_vien = relationship('SinhVien', back_populates='dang_kys')
+    khoa_hoc = relationship('KhoaHoc', back_populates='dang_kys')
+    
+    def __str__(self):
+        return self.name
+
+class LopHoc(db.model):
+    __tablename__ = 'lop_hoc'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    giao_vien = Column(String(255), nullable=False)
+    thoi_gian = Column(DateTime, nullable=False)
+    phong_hoc = Column(String(255))
+    khoa_hoc_id = Column(Integer, ForeignKey('khoa_hoc.id'))
+    khoa_hoc = relationship('KhoaHoc', back_populates='lop_hocs')
+    diems = relationship('Diem', back_populates='lop_hoc')
+    
+    def __str__(self):
+        return self.name
+
+class Diem(db.model):
+    __tablename__ = 'diem'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
+    lop_hoc_id = Column(Integer, ForeignKey('lop_hoc.id'))
+    diem_so = Column(Float)
+    sinh_vien = relationship('SinhVien', back_populates='diems')
+    lop_hoc = relationship('LopHoc', back_populates='diems')
+    
+    def __str__(self):
+        return self.name
+
+class GiaoVien(db.model):
+    __tablename__ = 'giao_vien'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    ten_giao_vien = Column(String(255), nullable=False)
+    lop_hocs = relationship('LopHoc', back_populates='giao_vien')
+    
+    def __str__(self):
+        return self.name
+
+class ThoiGianHoc(db.model):
+    __tablename__ = 'thoi_gian_hoc'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    ten_thoi_gian = Column(String(255), nullable=False)
+    lop_hocs = relationship('LopHoc', back_populates='thoi_gian_hoc')
+    
+    def __str__(self):
+        return self.name)
+
+
+
+class QuanLyHocPhi(db.model):
+    __tablename__ = 'quan_ly_hoc_phi'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
+    khoa_hoc_id = Column(Integer, ForeignKey('khoa_hoc.id'))
+    hoc_phi = Column(Float)
+    ngay_thanh_toan = Column(Date, server_default='CURRENT_DATE')
+    sinh_vien = relationship('SinhVien', back_populates='quan_ly_hoc_phi')
+    khoa_hoc = relationship('KhoaHoc', back_populates='quan_ly_hoc_phi')
+    
+    def __str__(self):
+        return self.name
+        
 if __name__ == '__main__':
     with app.app_context():
         #Tạo các bảng
