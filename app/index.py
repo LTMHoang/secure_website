@@ -43,11 +43,6 @@ def services():
     return render_template('/pages/services.html')
 
 
-@app.route('/calendar.html')
-def pages():
-    return render_template('/pages/calendar.html')
-
-
 @app.route('/admin/login', methods=['post'])
 def admin_login():
     request.form.get('username')

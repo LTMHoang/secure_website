@@ -99,12 +99,13 @@
 <nav>
     <ul class="flex menu">
         <li><a href="{{ url_for('index') }}" id="home"><i class="fa-solid fa-house"></i></a></li>
-        <li class="sub"><a href="{{ url_for('calendar') }}">Lịch khai giảng <i class="fa-solid fa-caret-down"></i></a></li>
-        <li class="sub"><a href=".{{ url_for('edu') }}">Chương trình đào tạo <i class="fa-solid fa-caret-down"></i></a></li>
+        <li class="sub"><a href="{{ url_for('calendar') }}">Lịch khai giảng</a></li>
+        <li class="sub"><a href=".{{ url_for('edu') }}">Chương trình đào tạo</a></li>
         <li><a href="{{ url_for('services') }}">Dịch vụ</a></li>
         <li><a href="{{ url_for('news') }}">Tin tức</a></li>
         <li><a href="{{ url_for('payment_guide') }}">Hướng dẫn thanh toán</a></li>
         <li><a href="{{ url_for('contact') }}">Liên hệ</a></li>
+        <li><a href="{{ url_for('login_admin') }}">Đăng nhập</a></li>
         <li id="nav_find" class="flex">
             <form action="">
                 <input type="text" placeholder="Tìm kiếm">
