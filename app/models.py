@@ -67,7 +67,7 @@ class KhoaHoc(db.Model):
     def __str__(self):
         return self.name
 
-class DangKy(db.model):
+class DangKy(db.Model):
     __tablename__ = 'dang_ky'
     id = Column(Integer, primary_key=True, autoincrement=True)
     sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
@@ -79,7 +79,7 @@ class DangKy(db.model):
     def __str__(self):
         return self.name
 
-class LopHoc(db.model):
+class LopHoc(db.Model):
     __tablename__ = 'lop_hoc'
     id = Column(Integer, primary_key=True, autoincrement=True)
     giao_vien = Column(String(255), nullable=False)
@@ -92,7 +92,7 @@ class LopHoc(db.model):
     def __str__(self):
         return self.name
 
-class Diem(db.model):
+class Diem(db.Model):
     __tablename__ = 'diem'
     id = Column(Integer, primary_key=True, autoincrement=True)
     sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
@@ -104,7 +104,7 @@ class Diem(db.model):
     def __str__(self):
         return self.name
 
-class GiaoVien(db.model):
+class GiaoVien(db.Model):
     __tablename__ = 'giao_vien'
     id = Column(Integer, primary_key=True, autoincrement=True)
     ten_giao_vien = Column(String(255), nullable=False)
@@ -113,7 +113,7 @@ class GiaoVien(db.model):
     def __str__(self):
         return self.name
 
-class ThoiGianHoc(db.model):
+class ThoiGianHoc(db.Model):
     __tablename__ = 'thoi_gian_hoc'
     id = Column(Integer, primary_key=True, autoincrement=True)
     ten_thoi_gian = Column(String(255), nullable=False)
@@ -124,7 +124,7 @@ class ThoiGianHoc(db.model):
 
 
 
-class QuanLyHocPhi(db.model):
+class QuanLyHocPhi(db.Model):
     __tablename__ = 'quan_ly_hoc_phi'
     id = Column(Integer, primary_key=True, autoincrement=True)
     sinh_vien_id = Column(Integer, ForeignKey('sinh_vien.id'))
