@@ -54,7 +54,7 @@ class SinhVien(db.Model):
     diems = relationship('Diem', back_populates='sinh_vien')
     
     def __str__(self):
-        return self.name
+        return self.ho_ten
 
 class KhoaHoc(db.Model):
     __tablename__ = 'khoa_hoc'
@@ -65,7 +65,7 @@ class KhoaHoc(db.Model):
     lop_hocs = relationship('LopHoc', back_populates='khoa_hoc')
     
     def __str__(self):
-        return self.name
+        return self.ten_khoa_hoc
 
 class DangKy(db.Model):
     __tablename__ = 'dang_ky'
@@ -75,9 +75,6 @@ class DangKy(db.Model):
     ngay_dang_ky = Column(Date, server_default='CURRENT_DATE')
     sinh_vien = relationship('SinhVien', back_populates='dang_kys')
     khoa_hoc = relationship('KhoaHoc', back_populates='dang_kys')
-    
-    def __str__(self):
-        return self.name
 
 class LopHoc(db.Model):
     __tablename__ = 'lop_hoc'
@@ -88,9 +85,6 @@ class LopHoc(db.Model):
     khoa_hoc_id = Column(Integer, ForeignKey('khoa_hoc.id'))
     khoa_hoc = relationship('KhoaHoc', back_populates='lop_hocs')
     diems = relationship('Diem', back_populates='lop_hoc')
-    
-    def __str__(self):
-        return self.name
 
 class Diem(db.Model):
     __tablename__ = 'diem'
@@ -100,9 +94,6 @@ class Diem(db.Model):
     diem_so = Column(Float)
     sinh_vien = relationship('SinhVien', back_populates='diems')
     lop_hoc = relationship('LopHoc', back_populates='diems')
-    
-    def __str__(self):
-        return self.name
 
 class GiaoVien(db.Model):
     __tablename__ = 'giao_vien'
@@ -111,16 +102,13 @@ class GiaoVien(db.Model):
     lop_hocs = relationship('LopHoc', back_populates='giao_vien')
     
     def __str__(self):
-        return self.name
+        return self.ten_giao_vien
 
 class ThoiGianHoc(db.Model):
     __tablename__ = 'thoi_gian_hoc'
     id = Column(Integer, primary_key=True, autoincrement=True)
     ten_thoi_gian = Column(String(255), nullable=False)
     lop_hocs = relationship('LopHoc', back_populates='thoi_gian_hoc')
-    
-    def __str__(self):
-        return self.name)
 
 
 
@@ -133,9 +121,6 @@ class QuanLyHocPhi(db.Model):
     ngay_thanh_toan = Column(Date, server_default='CURRENT_DATE')
     sinh_vien = relationship('SinhVien', back_populates='quan_ly_hoc_phi')
     khoa_hoc = relationship('KhoaHoc', back_populates='quan_ly_hoc_phi')
-    
-    def __str__(self):
-        return self.name
         
 if __name__ == '__main__':
     with app.app_context():
