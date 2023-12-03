@@ -1,7 +1,7 @@
-# from app.models import Category, Product, User
-# from app import app
-#
-#
+from app.models import User
+from app import app
+
+
 # def load_categories():
 #     return Category.query.all()
 #     # return [{
@@ -73,7 +73,7 @@
 #
 # def count_product():
 #     return Product.query.count()
-#
-#
-# def get_user_by_id(user_id):
-#     return User.query.get(user_id)
+
+
+def get_user_by_id(user_id):
+    return User.query.get(user_id)
