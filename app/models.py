@@ -107,10 +107,6 @@ class Diem(db.Model):
     diem_so = Column(Float)
 
 
-    def __str__(self):
-        return self.name
-
-
 class QuanLyHocPhi(db.Model):
     __tablename__ = 'quan_ly_hoc_phi'
     id = Column(Integer, primary_key=True, autoincrement=True)
