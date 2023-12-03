@@ -1,5 +1,6 @@
 from app.models import User
 from app import app
+from app.templates import cypher
 
 
 # def load_categories():
@@ -77,3 +78,8 @@ from app import app
 
 def get_user_by_id(user_id):
     return User.query.get(user_id)
+
+
+def authenticated_user(username, password):
+    password = cypher.affine_encrypt(password, 22, 11)
+    return User.query.filter(User.username.__eq__(username.strip()), User.password.__eq__(password.strip())).first()

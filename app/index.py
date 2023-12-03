@@ -6,6 +6,7 @@ import utils
 from app import app, login
 from app.models import *
 import hashlib
+from app.templates import cypher
 
 
 @app.route('/')
@@ -54,13 +55,12 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 
-@app.route("/login-admin", methods=['get', 'post'])
+@app.route("/login_admin", methods=['get', 'post'])
 def login_admin():
     if request.method == 'POST':
         username = request.form.get("username")
-        password = request.form.get("password", "")
-        password = str(hashlib.md5(password.strip().encode("utf-8")).hexdigest())
-        user = User.query.filter(User.username == username.strip(), User.password == password).first()
+        password = request.form.get("password")
+        user = dao.authenticated_user(username, password)
         if user:
             login_user(user=user)
 
@@ -69,4 +69,5 @@ def login_admin():
 
 if __name__ == '__main__':
     from app import admin
+
     app.run(debug=True)

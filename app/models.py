@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from app import db, app
 from flask_login import UserMixin
 import enum
+from app.templates import cypher
 
 
 class UserRoleEnum(enum.Enum):
@@ -106,6 +107,10 @@ class Diem(db.Model):
     diem_so = Column(Float)
 
 
+    def __str__(self):
+        return self.name
+
+
 class QuanLyHocPhi(db.Model):
     __tablename__ = 'quan_ly_hoc_phi'
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -118,12 +123,15 @@ class QuanLyHocPhi(db.Model):
 if __name__ == '__main__':
     with app.app_context():
         # Tạo các bảng
-        # db.create_all()
+        db.create_all()
 
-        import hashlib
-        u = User(name='Admin', username='admin', password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+        u = User(name='Admin', username='admin',
+                 password=cypher.affine_encrypt('123456', 22, 11),
                  user_role=UserRoleEnum.ADMIN)
-        db.session.add(u)
+        u1 = User(name='User1', username='user1',
+                  password=cypher.affine_encrypt('abcdef', 22, 11),
+                  user_role=UserRoleEnum.USER)
+        db.session.add_all([u, u1])
 
         # c1 = Category(name='Canon')
         # c2 = Category(name='Sony')
