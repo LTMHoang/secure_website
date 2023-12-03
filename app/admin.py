@@ -29,8 +29,8 @@ class LogoutView(BaseView):
 
         return redirect('/admin')
 
-    # def is_accessible(self):
-    #     return current_user.is_authenticated
+    def is_accessible(self):
+        return current_user.is_authenticated
 
 
 class MyHocVienView(AuthenticatedAdminMV):
