@@ -3,7 +3,7 @@ from flask import render_template, request, redirect, jsonify, session
 from flask_login import login_user
 import dao
 import utils
-from app import app, login
+from app import app, login,admin
 from app.models import *
 import hashlib
 from app.templates import cypher
@@ -44,10 +44,10 @@ def services():
     return render_template('/pages/services.html')
 
 
-@app.route('/admin/login', methods=['post'])
-def admin_login():
-    request.form.get('username')
-    request.form.get('password')
+# @app.route('/admin/login', methods=['post'])
+# def admin_login():
+#     request.form.get('username')
+#     request.form.get('password')
 
 
 @login.user_loader
@@ -68,6 +68,4 @@ def login_admin():
 
 
 if __name__ == '__main__':
-    from app import admin
-
     app.run(debug=True)
