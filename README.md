@@ -1,1 +1,1 @@
-# secure_website
+Chỉnh lại mật khẩu MySQL trong __init__.py
