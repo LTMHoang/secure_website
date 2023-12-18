@@ -63,17 +63,17 @@ class MyDangKyView(AuthenticatedUserMV):
     can_export = True
     column_searchable_list = ['khoa_hoc_id','hoc_vien_id']
     column_filters = ['khoa_hoc_id','hoc_vien_id']
-    column_editable_list = ['khoa_hoc_id','hoc_vien_id', 'ngay_dang_ky']
+    column_editable_list = ['khoa_hoc_id', 'hoc_vien_id', 'ngay_dang_ky']
     details_modal = True
     edit_modal = True
 
 
 class MyLopHocView(AuthenticatedAdminMV):
-    column_list = ['id', 'khoa_hoc_id', 'phong_hoc', 'thoi_gian', 'phong_hoc', 'giao_vien_id']
+    column_list = ['id', 'phong_hoc', 'thoi_gian', 'giao_vien_id', 'khoa_hoc_id']
     can_export = True
-    column_searchable_list = ['khoa_hoc_id', 'phong_hoc', 'giao_vien_id']
-    column_filters = ['khoa_hoc_id', 'phong_hoc', 'giao_vien_id']
-    column_editable_list = ['khoa_hoc_id', 'phong_hoc', 'giao_vien_id']
+    column_searchable_list = ['phong_hoc']
+    column_filters = ['phong_hoc']
+    column_editable_list = ['phong_hoc']
     details_modal = True
     edit_modal = True
 

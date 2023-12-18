@@ -4,9 +4,9 @@ def count_course(course):
     if course:
         for c in course.values():
             total_quantity += c['quantity']
-            #total_amount = c['quantity'] * c['price']
+            total_amount = c['quantity']
 
     return {
-        #"total_amount": total_amount,
+        "total_amount": total_amount,
         "total_quantity": total_quantity
     }

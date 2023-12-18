@@ -1,5 +1,4 @@
-
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, Enum, Date, DateTime,Time
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Enum, Date, DateTime, Time
 
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, Float, ForeignKey, Enum, Date, DateTime
@@ -38,6 +37,7 @@ class HocVien(db.Model):
     image = Column(String(255), default='https://genshin-guide.com/wp-content/uploads/yae-miko.png')
     dang_kys = relationship('DangKy', backref='hoc_vien')
     diems = relationship('Diem', backref='hoc_vien')
+    hoc_phi = relationship('QuanLyHocPhi', backref='hoc_vien')
 
     def __str__(self):
         return self.ho_ten
@@ -50,6 +50,7 @@ class KhoaHoc(db.Model):
     mo_ta = Column(String(255))
     dang_kys = relationship('DangKy', backref='khoa_hoc')
     lop_hocs = relationship('LopHoc', backref='khoa_hoc')
+    hoc_phi = relationship('QuanLyHocPhi', backref='khoa_hoc')
 
     def __str__(self):
         return self.ten_khoa_hoc
@@ -58,9 +59,9 @@ class KhoaHoc(db.Model):
 class DangKy(db.Model):
     __tablename__ = 'dang_ky'
     id = Column(Integer, primary_key=True, autoincrement=True)
+    ngay_dang_ky = Column(DateTime, nullable=False, default=datetime.now())
     hoc_vien_id = Column(Integer, ForeignKey(HocVien.id))
     khoa_hoc_id = Column(Integer, ForeignKey(KhoaHoc.id))
-    ngay_dang_ky = Column(DateTime, nullable=False, default=datetime.now())
 
 
 class GiaoVien(db.Model):
@@ -76,31 +77,29 @@ class GiaoVien(db.Model):
 class LopHoc(db.Model):
     __tablename__ = 'lop_hoc'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    giao_vien_id = Column(Integer, ForeignKey(GiaoVien.id))
     thoi_gian = Column(DateTime, nullable=False)
     phong_hoc = Column(String(50))
+    diems = relationship('Diem', backref='lop_hoc')
+    giao_vien_id = Column(Integer, ForeignKey(GiaoVien.id))
     khoa_hoc_id = Column(Integer, ForeignKey(KhoaHoc.id))
 
 
 class QuanLyHocPhi(db.Model):
     __tablename__ = 'quan_ly_hoc_phi'
     id = Column(Integer, primary_key=True, autoincrement=True)
+    hoc_phi = Column(Float, nullable=False)
+    ngay_thanh_toan = Column(DateTime, default=datetime.now())
     hoc_vien_id = Column(Integer, ForeignKey(HocVien.id))
     khoa_hoc_id = Column(Integer, ForeignKey(KhoaHoc.id))
-
-    hoc_phi = Column(Float, nullable=False)
-    ngay_thanh_toan = Column(DateTime)
-
-    hoc_phi = Column(Float)
-    ngay_thanh_toan = Column(DateTime, default=datetime.now())
 
 
 class Diem(db.Model):
     __tablename__ = 'diem'
     id = Column(Integer, primary_key=True, autoincrement=True)
+    diems = Column(Float)
     hoc_vien_id = Column(Integer, ForeignKey(HocVien.id))
     lop_hoc_id = Column(Integer, ForeignKey(LopHoc.id))
-    diems = Column(Float)
+
 
 class Course(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
@@ -109,23 +108,21 @@ class Course(db.Model):
     endtime = Column(Time, nullable=False)
     startdate = Column(Date, nullable=False)
     address = Column(String(100), nullable=False)
-    type = Column(String(100),nullable=False)
-
+    type = Column(String(100), nullable=False)
 
 
 if __name__ == '__main__':
     with app.app_context():
-
         db.drop_all()
         # Tạo các bảng
 
-        #Xóa các bảng đã tạo
+        # Xóa các bảng đã tạo
         db.drop_all()
 
         # Tạo các bảng mới
         db.create_all()
 
-        #Tạo User
+        # Tạo User
         u = User(name='Admin', username='admin',
                  password=cypher.affine_encrypt('123456', 22, 11),
                  user_role=UserRoleEnum.ADMIN)
@@ -134,7 +131,7 @@ if __name__ == '__main__':
                   user_role=UserRoleEnum.USER)
         db.session.add_all([u, u1])
 
-        #Tạo Học viên
+        # Tạo Học viên
         hv1 = HocVien(ho_ten='Nguyen Van A', ngay_sinh='2003-12-1', dia_chi='Duong X, tinh X', email='nva@gmail.com')
         hv2 = HocVien(ho_ten='Nguyen Van B', ngay_sinh='2002-11-20', dia_chi='Duong A, tinh A', email='nvb@gmail.com')
         hv3 = HocVien(ho_ten='Nguyen Van C', ngay_sinh='2000-1-1', dia_chi='Duong B, tinh B', email='nvc@gmail.com')
@@ -142,14 +139,14 @@ if __name__ == '__main__':
         hv5 = HocVien(ho_ten='Nguyen Van E', ngay_sinh='2001-2-28', dia_chi='Duong D, tinh D', email='nve@gmail.com')
         db.session.add_all([hv1, hv2, hv3, hv4, hv5])
 
-        #Tạo Khóa học
+        # Tạo Khóa học
         kh1 = KhoaHoc(ten_khoa_hoc='Lap trinh Android')
         kh2 = KhoaHoc(ten_khoa_hoc='Lap trinh iOS')
         kh3 = KhoaHoc(ten_khoa_hoc='Quan tri ha tang mang')
         kh4 = KhoaHoc(ten_khoa_hoc='Quan tri he thong mang')
         db.session.add_all([kh1, kh2, kh3, kh4])
 
-        #Tạo Đăng ký khóa học
+        # Tạo Đăng ký khóa học
         dk1 = DangKy(hoc_vien_id=1, khoa_hoc_id=2)
         dk2 = DangKy(hoc_vien_id=2, khoa_hoc_id=2)
         dk3 = DangKy(hoc_vien_id=3, khoa_hoc_id=2)
@@ -157,7 +154,7 @@ if __name__ == '__main__':
         dk5 = DangKy(hoc_vien_id=5, khoa_hoc_id=3)
         db.session.add_all([dk1, dk2, dk3, dk4, dk5])
 
-        #Tạo Giáo viên
+        # Tạo Giáo viên
         gv1 = GiaoVien(ten_giao_vien='Trinh Thanh Hai')
         gv2 = GiaoVien(ten_giao_vien='Tran Minh Bao Long')
         gv3 = GiaoVien(ten_giao_vien='Phan Hoang Trieu')
@@ -165,25 +162,38 @@ if __name__ == '__main__':
         gv5 = GiaoVien(ten_giao_vien='Ho Phan Tan Khoa')
         db.session.add_all([gv1, gv2, gv3, gv4, gv5])
 
-        #Tạo Lớp học
+        # Tạo Lớp học
         lh1 = LopHoc(giao_vien_id=5, thoi_gian='2023-12-20 07:00:00', phong_hoc='A.XXX', khoa_hoc_id=1)
         lh2 = LopHoc(giao_vien_id=4, thoi_gian='2023-12-21 07:00:00', phong_hoc='A.XXX', khoa_hoc_id=1)
         lh3 = LopHoc(giao_vien_id=1, thoi_gian='2023-12-20 13:00:00', phong_hoc='A.XXX', khoa_hoc_id=2)
         lh4 = LopHoc(giao_vien_id=3, thoi_gian='2023-12-30 18:00:00', phong_hoc='A.XXX', khoa_hoc_id=3)
         db.session.add_all([lh1, lh2, lh3, lh4])
 
-        #Tạo Quản lý học phí
+        # Tạo Quản lý học phí
         hp1 = QuanLyHocPhi(hoc_vien_id=1, khoa_hoc_id=2, hoc_phi=5000000)
         hp2 = QuanLyHocPhi(hoc_vien_id=2, khoa_hoc_id=2, hoc_phi=5000000)
         hp3 = QuanLyHocPhi(hoc_vien_id=3, khoa_hoc_id=2, hoc_phi=5000000)
         db.session.add_all([hp1, hp2, hp3])
 
-        # # Tạo Điểm
-        # diem1 = Diem(hoc_vien_id=1, lop_hoc_id=3, diems=10)
-        # diem2 = Diem(hoc_vien_id=2, lop_hoc_id=3, diems=8)
-        # diem3 = Diem(hoc_vien_id=3, lop_hoc_id=3, diems=5)
-        # diem4 = Diem(hoc_vien_id=5, lop_hoc_id=4, diems=9)
-        # db.session.add_all([diem1, diem2, diem3, diem4])
+        # Tạo Điểm
+        diem1 = Diem(hoc_vien_id=1, lop_hoc_id=3, diems=10)
+        diem2 = Diem(hoc_vien_id=2, lop_hoc_id=3, diems=8)
+        diem3 = Diem(hoc_vien_id=3, lop_hoc_id=3, diems=5)
+        diem4 = Diem(hoc_vien_id=5, lop_hoc_id=4, diems=9)
+        db.session.add_all([diem1, diem2, diem3, diem4])
 
-        #Đẩy dữ liệu lên mysql
+        # Tạo Course
+        c1 = Course(classname='KTVTKW', starttime='07:00:00', endtime='09:30:00', startdate='2023-12-24',
+                    address='A.XXX', type='Thiết kế Website')
+        c2 = Course(classname='AMD', starttime='07:00:00', endtime='09:30:00', startdate='2023-12-24',
+                    address='A.XXX', type='Thiết kế Website')
+        c3 = Course(classname='CVTKDHVW', starttime='13:00:00', endtime='15:30:00', startdate='2023-12-20',
+                    address='A.XXX', type='Thiết kế Website')
+        c4 = Course(classname='LTA', starttime='13:00:00', endtime='15:30:00', startdate='2023-12-19',
+                    address='A.XXX', type='Lập trình di động')
+        c5 = Course(classname='MOS_P', starttime='18:00:00', endtime='20:30:00', startdate='2023-12-30',
+                    address='A.XXX', type='Tin học văn phòng (MOS)')
+        db.session.add_all([c1, c2, c3, c4, c5])
+
+        # Đẩy dữ liệu lên mysql
         db.session.commit()

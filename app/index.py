@@ -59,10 +59,10 @@ def services():
     return render_template('/pages/services.html')
 
 
-# @app.route('/admin/login', methods=['post'])
-# def admin_login():
-#     request.form.get('username')
-#     request.form.get('password')
+@app.route('/admin/login', methods=['post'])
+def admin_login():
+    request.form.get('username')
+    request.form.get('password')
 
 
 @login.user_loader
@@ -135,19 +135,15 @@ def add_to_course():
     session['course'] = course
     print(course)
 
-    # return jsonify({
-    #     "total_amount": 100,
-    #     "total_quantity": 10,
-    # })
-
     return utils.count_course(course)
+
 
 @app.route('/course')
 def registercourse():
     return render_template('registercourse.html')
 
+
 if __name__ == '__main__':
     from flask_sslify import SSLify
-
     sslify = SSLify(app)
     app.run(debug=True)
