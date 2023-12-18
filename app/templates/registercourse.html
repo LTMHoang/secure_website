@@ -1,0 +1,45 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<h1 class="text-center text-info mt-1">CÁC KHÓA HỌC ĐÃ ĐĂNG KÝ</h1>
+{% if 'course' in session %}
+<table class="table">
+    <tr>
+        <th>Id Khóa Học</th>
+        <th>Lớp</th>
+        <th>Thời gian Bắt Đầu</th>
+        <th>Thời gian Kết Thúc</th>
+        <th>Lịch khai giảng</th>
+        <th>Địa điểm học</th>
+        <th>Tên Khóa Học</th>
+        <th>Số lượng đăng ký</th>
+
+    </tr>
+    {% for c in session['course'].values() %}
+    <tr>
+        <td>{{c.id}}</td>
+        <td>{{c.classname}}</td>
+        <td>{{c.starttime}}</td>
+        <td>{{c.endtime}}</td>
+        <td>{{c.startdate}}</td>
+        <td>{{c.address}}</td>
+        <td>{{c.type}}</td>
+        <td>
+            <input class="form-control" type="number" value="{{c.quantity}}"/>
+        </td>
+        <td>
+                 <button class="btn btn-danger" type="submit" >&times</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="alert alert-info">
+<!--    <h3>Tổng Tiền: {{course.total_amount}} VNĐ</h3>-->
+    <h3>Tổng số lượng khóa học: {{course.total_quantity}} </h3>
+</div>
+<div>
+    <button class="btn btn-success m-1" type="submit">XÁC NHẬN</button>
+</div>
+{% else %}
+<div class="alert alert-warning">KHÔNG CÓ KHÓA HỌC NÀO ĐƯỢC ĐĂNG KÝ</div>
+{% endif %}
+{% endblock %}

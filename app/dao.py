@@ -1,4 +1,4 @@
-from app.models import User
+from app.models import User, Course
 from app import app
 from app.templates import cypher
 
@@ -83,3 +83,6 @@ def get_user_by_id(user_id):
 def authenticated_user(username, password):
     password = cypher.affine_encrypt(password, 22, 11)
     return User.query.filter(User.username.__eq__(username.strip()), User.password.__eq__(password.strip())).first()
+
+def loadCourse():
+    return Course.query.all()

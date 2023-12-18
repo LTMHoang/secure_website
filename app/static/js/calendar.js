@@ -55,4 +55,28 @@ $(document).ready(function() {
             $('.cal_overplay, .form_signup').removeClass('cal_active');
         }
     })
-});
+})
+function registerCourse(id, classname, starttime, endtime, startdate, address, type) {
+    fetch('/api/course', {
+        method: 'post',
+        body: JSON.stringify({
+            "id": id,
+            "classname": classname,
+            "starttime": starttime,
+            "endtime": endtime,
+            "startdate":startdate,
+            "address": address,
+            "type": type
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(function(res) {
+        return res.json();
+    }).then(function(data) {
+        console.info(data)
+        let items = document.getElementsByClassName("course-counter")
+        for (let item of items)
+            item.innerText = data.total_quantity
+    });
+}

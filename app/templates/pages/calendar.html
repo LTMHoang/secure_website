@@ -18,69 +18,35 @@
                 <table cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>Lớp</th>
-                        <th>Thời gian</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
                         <th>Lịch khai giảng</th>
                         <th>Địa điểm học</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>KTVTKW</td>
-                        <td>7h - 11h</td>
-                        <td>24/8/2022</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
+                        {% if course.type == "Thiết kế Website" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
                         <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                        <td>KTVTKW</td>
-                        <td>13h - 17h</td>
-                        <td>24/8/2022</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
                         </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>TKW</td>
-                        <td>13h - 17h</td>
-                        <td>25/8/2022</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>TKGDW</td>
-                        <td>7h - 11h</td>
-                        <td>24/8/2022</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>AMD</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>CVTKDHVW</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -101,60 +67,35 @@
                 <table cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>Lớp</th>
-                        <th>Thời gian</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
                         <th>Lịch khai giảng</th>
                         <th>Địa điểm học</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>LTA</td>
-                        <td>7h - 11h</td>
-                        <td>29/8/2022</td>
-                        <td>PM.002_371 Nguyễn Kiệm</td>
+                        {% if course.type == "Lập trình di động" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
                         <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                        <td>LTA</td>
-                        <td>13h - 17h</td>
-                        <td>25/8/2022</td>
-                        <td>PM.007_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
                         </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>LTI</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>LTI</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept" disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>RN</td>
-                        <td>13h - 17h</td>
-                        <td>6/9/2022</td>
-                        <td>P.401_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -175,41 +116,35 @@
                 <table cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>Lớp</th>
-                        <th>Thời gian</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
                         <th>Lịch khai giảng</th>
                         <th>Địa điểm học</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>UDCNTTCB</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                        {% if course.type == "Tin học văn phòng" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
+
                         </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>UDCNTTNC</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>LTNCC</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -230,42 +165,35 @@
                 <table cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>Lớp</th>
-                        <th>Thời gian</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
                         <th>Lịch khai giảng</th>
                         <th>Địa điểm học</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>MOS_W</td>
-                        <td>7h - 11h</td>
-                        <td>24/8/2022</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
+                        {% if course.type == "Tin học văn phòng (MOS)" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
                         <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                        <td>MOS_E</td>
-                        <td>13h - 17h</td>
-                        <td>24/8/2022</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
                         </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>MOS_P</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -287,50 +215,35 @@
                 <table cellspacing="0" cellpadding="0">
                     <thead>
                     <tr>
+                        <th>STT</th>
                         <th>Lớp</th>
-                        <th>Thời gian</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
                         <th>Lịch khai giảng</th>
                         <th>Địa điểm học</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>NMQTMVANM</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
+                        {% if course.type == "Mạng máy tính" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
+
                         </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>QTHTM</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>QTHTM</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>Hiện tại chưa có</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" disabled class="calendar_accept">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>ANM</td>
-                        <td>7h - 11h</td>
-                        <td>10/9/2022</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                        <td>
-                            <input type="button" value="Đăng ký" class="calendar_accept">
-                        </td>
-                    </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
@@ -352,136 +265,41 @@
                         (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
                     </i>
                 </p>
-                <table>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
                     <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        <th>STT</th>
+                        <th>Lớp</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
+                        {% if course.type == "Thiết kế Website" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        </td>
+                        </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>25/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKGDW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>AMD</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>CVTKDHVW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -493,143 +311,44 @@
             <div>
                 <p>
                     <i>
-                        (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
-                        (2) TKW: Thiết kế Website<br/>
-                        (3) TKGDW: Thiết kế giao diện Website<br/>
-                        (4) AMD: App Mobile Design<br/>
-                        (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        (1) LTA: Lập trình Android <br/>
+                        (2) LTI: Lập trình IOS <br/>
+                        (3) RN: React Native
                     </i>
                 </p>
-                <table>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
                     <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        <th>STT</th>
+                        <th>Lớp</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
+                        {% if course.type == "Lập trình di động" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>25/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKGDW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>AMD</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>CVTKDHVW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -641,143 +360,44 @@
             <div>
                 <p>
                     <i>
-                        (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
-                        (2) TKW: Thiết kế Website<br/>
-                        (3) TKGDW: Thiết kế giao diện Website<br/>
-                        (4) AMD: App Mobile Design<br/>
-                        (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        (1) UDCNTTCB: Ứng dụng CNTT cơ bản <br/>
+                        (2) UDCNTTNC: Ứng dụng CNTT nâng cao <br/>
+                        (3) LTNCC: Luyện thi nhận chứng chỉ
                     </i>
                 </p>
-                <table>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
                     <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        <th>STT</th>
+                        <th>Lớp</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
+                        {% if course.type == "Tin học văn phòng" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>25/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKGDW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>AMD</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>CVTKDHVW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -789,143 +409,44 @@
             <div>
                 <p>
                     <i>
-                        (1) KTVTKW: Kỹ thuật viên thiết kế Website<br/>
-                        (2) TKW: Thiết kế Website<br/>
-                        (3) TKGDW: Thiết kế giao diện Website<br/>
-                        (4) AMD: App Mobile Design<br/>
-                        (5) CVTKDHVW: Chuyên viên thiết kế đồ họa & Website
+                        (1) MOS_W: MOS WORD<br/>
+                        (2) MOS_E: MOS EXCEL<br/>
+                        (3) MOS_P: MOS POWERPOINT
                     </i>
                 </p>
-                <table>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
                     <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        <th>STT</th>
+                        <th>Lớp</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
+                        {% if course.type == "Tin học văn phòng (MOS)" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>25/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKGDW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>AMD</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>CVTKDHVW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -943,136 +464,39 @@
                         (4) ANM: An ninh mạng
                     </i>
                 </p>
-                <table>
+                <table cellspacing="0" cellpadding="0">
+                    <thead>
                     <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        <th>STT</th>
+                        <th>Lớp</th>
+                        <th>Thời gian Bắt Đầu</th>
+                        <th>Thời gian Kết Thúc</th>
+                        <th>Lịch khai giảng</th>
+                        <th>Địa điểm học</th>
+                        <th></th>
                     </tr>
+                    </thead>
+                    <tbody>
+                    {% for course in courses %}
                     <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.001_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
+                        {% if course.type == "Mạng máy tính" %}
+                        <td>{{course.id}}</td>
+                        <td>{{course.classname}}</td>
+                        <td>{{course.starttime}}</td>
+                        <td>{{course.endtime}}</td>
+                        <td>{{course.startdate}}</td>
+                        <td>{{course.address}}</td>
+                       <td>
+                            <button class="btn btn-danger" onclick="registerCourse({{course.id}}, '{{course.classname}}', '{{course.starttime}}',
+                                '{{course.endtime}}', '{{course.startdate}}', '{{course.address}}', '{{course.type}}')">
+                                Đăng Ký
+                            </button>
 
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>KTVTKW</td>
+                        </td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.101_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>13h - 17h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>25/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.202_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>TKGDW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>7h - 11h</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>24/8/2022</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P.301_371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept"></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>AMD</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr>
-                        <td>Lớp</td>
-                        <td>CVTKDHVW</td>
-                    </tr>
-                    <tr>
-                        <td>Thời gian</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Lịch khai giảng</td>
-                        <td>Hiện tại chưa có</td>
-                    </tr>
-                    <tr>
-                        <td>Địa điểm học</td>
-                        <td>P._371 Nguyễn Kiệm</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input type="button" value="Đăng ký" class="calendar_accept" disabled></td>
-                    </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -1105,7 +529,7 @@
                 <br/>
                 <input type="text" placeholder="Địa chỉ hiện tại" id="address">
             </p>
-            <input type="button" value="Đăng ký">
+            <input type="submit" value="Đăng ký">
         </div>
     </div>
 </section>

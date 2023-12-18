@@ -52,6 +52,10 @@
                     <li><a class="nav_tablet-link" href="./assets/news.html">Tin tức</a></li>
                     <li><a class="nav_tablet-link" href="./assets/paymentGuide.html">Hướng dẫn thanh toán</a></li>
                     <li><a class="nav_tablet-link" href="./assets/contact.html">Liên hệ</a></li>
+                    <li>
+                        <a class="nav_tablet-link" href="{{url_for('calendar')}}">&#128722; Đăng ký khóa học<span
+                                class="badge bg-danger course-counter"></span></a></li>
+
                 </ul>
             </div>
             <div class="header_tablet-search">
@@ -104,6 +108,9 @@
         <li><a href="{{ url_for('services') }}">Dịch vụ</a></li>
         <li><a href="{{ url_for('news') }}">Tin tức</a></li>
         <li><a href="{{ url_for('payment_guide') }}">Hướng dẫn thanh toán</a></li>
+        <li>
+            <a class="nav_tablet-link" href="{{url_for('registercourse')}}">&#128722; Đăng ký khóa học<span
+                    class="badge bg-danger course-counter">{{course.total_quantity}}</span></a></li>
         <li><a href="{{ url_for('contact') }}">Liên hệ</a></li>
         <li><a href="{{ url_for('login_admin') }}">Đăng nhập</a></li>
         <li id="nav_find" class="flex">

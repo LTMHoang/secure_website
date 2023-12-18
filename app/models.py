@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, Enum, Date, DateTime
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Enum, Date, DateTime,Time
 from sqlalchemy.orm import relationship
 from app import db, app
 from flask_login import UserMixin
@@ -112,12 +112,24 @@ class QuanLyHocPhi(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     hoc_vien_id = Column(Integer, ForeignKey(HocVien.id))
     khoa_hoc_id = Column(Integer, ForeignKey(KhoaHoc.id))
-    hoc_phi = Column(Float)
+    hoc_phi = Column(Float, nullable=False)
     ngay_thanh_toan = Column(DateTime)
+
+
+class Course(db.Model):
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    classname = Column(String(50), nullable=False)
+    starttime = Column(Time, nullable=False)
+    endtime = Column(Time, nullable=False)
+    startdate = Column(Date, nullable=False)
+    address = Column(String(100), nullable=False)
+    type = Column(String(100),nullable=False)
+
 
 
 if __name__ == '__main__':
     with app.app_context():
+        db.drop_all()
         # Tạo các bảng
         db.create_all()
 
